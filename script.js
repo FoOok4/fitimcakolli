@@ -1,5 +1,42 @@
+// Typing animation
+function typeText(element, text, speed) {
+    let i = 0;
+    element.innerHTML = '<span class="cursor"></span>';
+    function type() {
+        if (i < text.length) {
+            element.innerHTML = text.substring(0, i + 1) + '<span class="cursor"></span>';
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    setTimeout(type, 800);
+}
+
+// Theme toggle
+function initThemeToggle() {
+    const toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') {
+        document.body.classList.add('light-mode');
+    }
+    toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        document.body.classList.toggle('light-mode');
+        const isLight = document.body.classList.contains('light-mode');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+}
+
 // Smooth scroll reveal animation
 document.addEventListener('DOMContentLoaded', function() {
+    // Typing animation
+    const typingEl = document.getElementById('typingText');
+    if (typingEl) typeText(typingEl, 'Serverless Specialist', 80);
+
+    // Theme toggle
+    initThemeToggle();
     // Add reveal class to sections
     const sections = document.querySelectorAll('.invitation, .location, .program, .rsvp, .projects, .education');
     sections.forEach(section => {

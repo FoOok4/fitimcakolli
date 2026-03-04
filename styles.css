@@ -18,6 +18,112 @@
     --font-sans: 'Montserrat', Arial, sans-serif;
 }
 
+/* Light mode overrides */
+body.light-mode {
+    --color-primary: #1A8A54;
+    --color-secondary: #D1D5DB;
+    --color-accent: #16A34A;
+    --color-dark: #F9FAFB;
+    --color-light: #FFFFFF;
+    --color-text: #1F2937;
+    --color-muted: #6B7280;
+    --color-surface: #F3F4F6;
+}
+
+body.light-mode .hero {
+    background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 50%, #F3F4F6 100%);
+}
+
+body.light-mode .hero-overlay {
+    background:
+        radial-gradient(ellipse at 20% 80%, rgba(26, 138, 84, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(22, 163, 74, 0.04) 0%, transparent 50%);
+}
+
+body.light-mode .program {
+    background: var(--color-light);
+}
+
+body.light-mode .projects {
+    background: linear-gradient(180deg, #F3F4F6 0%, #E5E7EB 100%);
+}
+
+body.light-mode .rsvp {
+    background: linear-gradient(180deg, #E5E7EB 0%, #FFFFFF 100%);
+}
+
+body.light-mode .location {
+    background: linear-gradient(180deg, #FFFFFF 0%, #E5E7EB 100%);
+}
+
+body.light-mode .footer {
+    background: #F3F4F6;
+    color: #1F2937;
+}
+
+body.light-mode .footer-name {
+    color: #1F2937;
+}
+
+body.light-mode .invitation-card,
+body.light-mode .project-card {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode .date-badge {
+    border-color: var(--color-secondary);
+    background: rgba(0, 0, 0, 0.03);
+}
+
+body.light-mode .project-tech span {
+    border-color: var(--color-secondary);
+    background: rgba(22, 163, 74, 0.06);
+}
+
+body.light-mode .skill-tags span {
+    border-color: var(--color-secondary);
+}
+
+body.light-mode .skill-tags span:hover {
+    background: rgba(22, 163, 74, 0.08);
+}
+
+body.light-mode .btn-primary {
+    background: var(--color-primary);
+    color: #FFFFFF;
+}
+
+body.light-mode .btn-primary:hover {
+    background: var(--color-accent);
+}
+
+body.light-mode .btn-cv {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+body.light-mode .btn-cv:hover {
+    background: var(--color-primary);
+    color: #FFFFFF;
+}
+
+body.light-mode .mouse {
+    border-color: var(--color-primary);
+}
+
+body.light-mode .mouse::before {
+    background: var(--color-primary);
+}
+
+body.light-mode .theme-toggle {
+    border-color: var(--color-secondary);
+    color: var(--color-text);
+    background: var(--color-surface);
+}
+
+body.light-mode .theme-toggle .sun { display: none; }
+body.light-mode .theme-toggle .moon { display: block; }
+
 html {
     scroll-behavior: smooth;
 }
@@ -66,6 +172,9 @@ body {
 .hero-content {
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero-logo {
@@ -95,6 +204,30 @@ body {
     letter-spacing: 2px;
 }
 
+.typing-text {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    color: var(--color-primary);
+    margin: 20px 0 0;
+    min-height: 1.6em;
+}
+
+.typing-text .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--color-primary);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 .date-badge {
     display: inline-flex;
     flex-direction: column;
@@ -104,6 +237,68 @@ body {
     background: rgba(255, 255, 255, 0.04);
     margin-top: 30px;
 }
+
+.btn-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-decoration: none;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cv svg {
+    width: 16px;
+    height: 16px;
+}
+
+.btn-cv:hover {
+    background: var(--color-primary);
+    color: var(--color-dark);
+    transform: translateY(-2px);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--color-secondary);
+    background: var(--color-surface);
+    color: var(--color-text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: auto;
+}
+
+.theme-toggle:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.theme-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.theme-toggle .moon { display: none; }
 
 .date-badge .day {
     font-family: var(--font-serif);
@@ -702,34 +897,50 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .timeline-item {
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 50px;
+    .timeline {
+        max-width: 100%;
+        padding-left: 24px;
     }
-    
+
     .timeline::before {
-        display: none;
+        left: 5px;
+        transform: none;
     }
-    
+
+    .timeline-item {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin-bottom: 36px;
+        position: relative;
+    }
+
+    .timeline-dot {
+        position: absolute;
+        left: -24px;
+        top: 4px;
+        margin: 0;
+        width: 10px;
+        height: 10px;
+    }
+
     .time {
-        text-align: center;
+        width: 100%;
+        text-align: left;
         padding-right: 0;
-        margin-bottom: 10px;
+        font-size: 1rem;
+        margin-bottom: 4px;
     }
-    
+
     .event-details {
+        width: 100%;
         padding-left: 0;
-        margin-top: 10px;
-        text-align: center;
+        margin-top: 2px;
+        text-align: left;
     }
 
     .event-name {
         padding-left: 0;
-    }
-    
-    .timeline-dot {
-        margin: 10px 0;
     }
     
     .date-badge {

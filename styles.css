@@ -14,8 +14,8 @@
     --color-text: #C8CDD5;
     --color-muted: #6B7280;
     --color-surface: #22262E;
-    --font-serif: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Montserrat', Arial, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', Arial, sans-serif;
 }
 
 /* Light mode overrides */
@@ -199,7 +199,7 @@ body {
 .bride-label {
     font-family: var(--font-serif);
     font-size: 1rem;
-    font-style: italic;
+    font-weight: 500;
     color: var(--color-primary);
     letter-spacing: 2px;
 }
@@ -379,8 +379,7 @@ body {
 .section-title {
     font-family: var(--font-serif);
     font-size: 2rem;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 500;
     color: var(--color-text);
     margin-bottom: 30px;
 }
@@ -395,7 +394,7 @@ body {
 .family-signature {
     font-family: var(--font-serif);
     font-size: 1.2rem;
-    font-style: italic;
+    font-weight: 500;
     color: var(--color-primary);
 }
 
@@ -436,7 +435,6 @@ body {
 
 .program .section-title {
     text-align: center;
-    font-style: normal;
     font-size: 1rem;
     letter-spacing: 4px;
     margin-bottom: 60px;
@@ -504,7 +502,7 @@ body {
 .event-company {
     font-family: var(--font-serif);
     font-size: 1rem;
-    font-style: italic;
+    font-weight: 500;
     color: var(--color-primary);
     margin-top: 4px;
 }
@@ -519,7 +517,6 @@ body {
 
 .projects-title {
     text-align: center;
-    font-style: normal !important;
     font-size: 1rem !important;
     letter-spacing: 4px;
     margin-bottom: 60px !important;
@@ -553,8 +550,7 @@ body {
 .project-name {
     font-family: var(--font-serif);
     font-size: 1.8rem;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 600;
     color: var(--color-accent);
     margin-bottom: 8px;
 }
@@ -615,7 +611,6 @@ body {
 }
 
 .rsvp .section-title {
-    font-style: normal;
     font-size: 1.1rem;
     letter-spacing: 2px;
     margin-bottom: 40px;
@@ -633,8 +628,7 @@ body {
 .skill-category {
     font-family: var(--font-serif);
     font-size: 1.3rem;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 500;
     color: var(--color-accent);
     margin-bottom: 15px;
 }
@@ -739,7 +733,7 @@ body {
 .location-subtitle {
     font-family: var(--font-serif);
     font-size: 1.3rem;
-    font-style: italic;
+    font-weight: 500;
     color: var(--color-primary);
     margin-bottom: 20px;
 }
@@ -814,8 +808,7 @@ body {
 .footer-name {
     font-family: var(--font-serif);
     font-size: 2.5rem;
-    font-weight: 400;
-    font-style: italic;
+    font-weight: 500;
     margin-bottom: 20px;
 }
 
@@ -829,7 +822,7 @@ body {
 .footer-from {
     font-family: var(--font-serif);
     font-size: 1rem;
-    font-style: italic;
+    font-weight: 500;
     color: var(--color-accent);
     margin-bottom: 30px;
 }
